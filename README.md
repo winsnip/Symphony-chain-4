@@ -1,5 +1,3 @@
-# Symphony--chain-4
-
 # Symphony Node Setup
 
 Instruksi ini menjelaskan cara mengatur node Symphony pada server Ubuntu.
@@ -80,18 +78,6 @@ WantedBy=multi-user.target
 EOF
 sudo systemctl daemon-reload
 sudo systemctl enable symphonyd
-```
-
-## Unduh Snapshot (opsional)
-
-```bash
-sudo systemctl stop symphonyd
-cp $HOME/.symphonyd/data/priv_validator_state.json $HOME/.symphonyd/priv_validator_state.json.backup
-rm -rf $HOME/.symphonyd/data
-curl -L https://snap-t.vinjan.xyz./symphony/latest.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.symphonyd
-mv $HOME/.symphonyd/priv_validator_state.json.backup $HOME/.symphonyd/data/priv_validator_state.json
-sudo systemctl restart symphonyd
-sudo journalctl -u symphonyd -f -o cat
 ```
 
 ## Buat Wallet
