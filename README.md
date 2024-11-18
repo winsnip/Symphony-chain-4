@@ -1,3 +1,6 @@
+### Explorer
+https://testnet.ping.pub/symphony/staking
+
 # Symphony Node Setup
 
 Instruksi ini menjelaskan cara mengatur node Symphony pada server Ubuntu.
